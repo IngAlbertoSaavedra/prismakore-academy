@@ -1,0 +1,22 @@
+.pk-card {
+  background: var(--pk-surface);
+  border: 1px solid var(--pk-border);
+  border-radius: var(--pk-radius-md);
+  box-shadow: var(--pk-shadow-sm);
+}
+
+.pk-code-block {
+  background: var(--pk-code-bg);
+  color: var(--pk-code-text);
+  padding: 16px;
+  border-radius: var(--pk-radius-md);
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre;
+  text-align: left;
+}
+
+.pk-muted {
+  color: var(--pk-text-muted);
+}

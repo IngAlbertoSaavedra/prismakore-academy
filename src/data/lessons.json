@@ -1,0 +1,91 @@
+[
+  {
+    "id": 1,
+    "moduleId": 1,
+    "order": 1,
+    "title": "Variables, tipos y operadores",
+    "slug": "variables-tipos-operadores",
+    "duration": "20 min",
+    "level": "Básico",
+    "summary": "Aprende a crear variables, reconocer tipos de datos y realizar operaciones básicas en Python.",
+    "explanation": "Una variable permite guardar información para usarla después. En Python no necesitas declarar el tipo de dato antes de usarla. El tipo se asigna automáticamente según el valor.",
+    "example": {
+      "title": "Ejemplo básico",
+      "code": "nombre = 'Ana'\nedad = 25\nprecio = 99.50\nactivo = True\n\nprint(nombre)\nprint(edad)\nprint(precio)\nprint(activo)\n\nprint(type(nombre))\nprint(type(edad))\nprint(type(precio))\nprint(type(activo))"
+    },
+    "exercises": [
+      {
+        "id": "1-1",
+        "title": "Datos personales",
+        "instructions": "Crea variables para guardar tu nombre, edad, ciudad y correo. Después imprime una frase usando esos datos.",
+        "starterCode": "# escribe tu código aquí"
+      },
+      {
+        "id": "1-2",
+        "title": "Operaciones básicas",
+        "instructions": "Crea dos variables numéricas. Calcula suma, resta, multiplicación y división. Imprime cada resultado.",
+        "starterCode": "# escribe tu código aquí"
+      },
+      {
+        "id": "1-3",
+        "title": "Tipos de datos",
+        "instructions": "Crea una variable de tipo texto, una de tipo entero, una decimal y una booleana. Imprime el valor y el tipo de cada una usando type().",
+        "starterCode": "# escribe tu código aquí"
+      }
+    ],
+    "solution": "nombre = 'Ana'\nedad = 25\nciudad = 'Monterrey'\ncorreo = 'ana@example.com'\n\nprint(f'{nombre} tiene {edad} años, vive en {ciudad} y su correo es {correo}')\n\nnum1 = 10\nnum2 = 5\n\nprint('Suma:', num1 + num2)\nprint('Resta:', num1 - num2)\nprint('Multiplicación:', num1 * num2)\nprint('División:', num1 / num2)\n\ntexto = 'Python'\nentero = 100\ndecimal = 99.50\nactivo = True\n\nprint(texto, type(texto))\nprint(entero, type(entero))\nprint(decimal, type(decimal))\nprint(activo, type(activo))",
+    "challenge": "Crea un programa que calcule el total a pagar de un producto. Usa variables para producto, precio, cantidad y total.",
+    "checklist": [
+      "Creé variables",
+      "Usé textos, números y booleanos",
+      "Realicé operaciones básicas",
+      "Usé print()",
+      "Usé type()",
+      "Usé f-strings"
+    ]
+  },
+  {
+    "id": 2,
+    "moduleId": 1,
+    "order": 2,
+    "title": "Entrada de datos y conversiones",
+    "slug": "entrada-datos-conversiones",
+    "duration": "20 min",
+    "level": "Básico",
+    "summary": "Aprende a capturar datos con input() y convertirlos a números para hacer operaciones.",
+    "explanation": "La función input() permite pedir datos al usuario. Todo lo que entra por input() llega como texto. Si necesitas hacer operaciones matemáticas, debes convertir el dato usando int() o float().",
+    "example": {
+      "title": "Ejemplo con input",
+      "code": "nombre = input('Escribe tu nombre: ')\nedad = int(input('Escribe tu edad: '))\n\nprint(f'Hola {nombre}, tienes {edad} años')\nprint(f'El próximo año tendrás {edad + 1} años')"
+    },
+    "exercises": [
+      {
+        "id": "2-1",
+        "title": "Usuario básico",
+        "instructions": "Pide al usuario su nombre, edad y ciudad. Imprime una frase usando esos datos.",
+        "starterCode": "# escribe tu código aquí"
+      },
+      {
+        "id": "2-2",
+        "title": "Calculadora simple",
+        "instructions": "Pide dos números al usuario. Convierte los valores a float y muestra suma, resta, multiplicación y división.",
+        "starterCode": "# escribe tu código aquí"
+      },
+      {
+        "id": "2-3",
+        "title": "Total de compra",
+        "instructions": "Pide el nombre de un producto, su precio y la cantidad comprada. Calcula e imprime el total.",
+        "starterCode": "# escribe tu código aquí"
+      }
+    ],
+    "solution": "nombre = input('Nombre: ')\nedad = int(input('Edad: '))\nciudad = input('Ciudad: ')\n\nprint(f'{nombre} tiene {edad} años y vive en {ciudad}')\n\nnum1 = float(input('Primer número: '))\nnum2 = float(input('Segundo número: '))\n\nprint('Suma:', num1 + num2)\nprint('Resta:', num1 - num2)\nprint('Multiplicación:', num1 * num2)\nprint('División:', num1 / num2)\n\nproducto = input('Producto: ')\nprecio = float(input('Precio: '))\ncantidad = int(input('Cantidad: '))\ntotal = precio * cantidad\n\nprint(f'Producto: {producto}')\nprint(f'Total a pagar: {total}')",
+    "challenge": "Crea un programa que pida sueldo mensual y calcule cuánto gana la persona en un año.",
+    "checklist": [
+      "Usé input()",
+      "Convertí texto a número con int()",
+      "Convertí texto a decimal con float()",
+      "Realicé operaciones con datos capturados",
+      "Mostré resultados usando f-strings"
+    ]
+  }
+]

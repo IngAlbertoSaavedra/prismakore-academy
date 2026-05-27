@@ -1,0 +1,31 @@
+:root {
+  --pk-primary: #2196f3;
+  --pk-primary-dark: #1565c0;
+  --pk-secondary: #7c3aed;
+  --pk-accent: #22c55e;
+
+  --pk-bg: #0f1117;
+  --pk-surface: #1f1f1f;
+  --pk-surface-soft: #252525;
+  --pk-border: #333842;
+
+  --pk-text: #f9fafb;
+  --pk-text-muted: #c7c7c7;
+  --pk-text-soft: #9ca3af;
+
+  --pk-code-bg: #111827;
+  --pk-code-text: #f9fafb;
+
+  --pk-success: #22c55e;
+  --pk-warning: #f59e0b;
+  --pk-danger: #ef4444;
+
+  --pk-radius-sm: 8px;
+  --pk-radius-md: 12px;
+  --pk-radius-lg: 18px;
+
+  --pk-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.22);
+  --pk-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.28);
+
+  --pk-header-height: 64px;
+}
