@@ -1,0 +1,124 @@
+{
+  "id": 1,
+  "slug": "variables-tipos-operadores",
+  "moduleId": 1,
+  "moduleName": "Módulo 1: Fundamentos",
+  "title": "Variables, tipos y operadores",
+  "subtitle": "Aprende a guardar información, reconocer tipos de datos y realizar operaciones básicas en Python.",
+  "level": "Básico",
+  "duration": "25 min",
+  "status": "Pendiente",
+  "objective": "Al terminar esta lección podrás crear variables, identificar tipos de datos básicos y usar operadores aritméticos para resolver pequeños cálculos.",
+  "description": "En Python puedes guardar información usando variables. Una variable es como una etiqueta que apunta a un valor. Ese valor puede ser texto, número entero, número decimal o un valor lógico como verdadero o falso.",
+  "topics": [
+    "Variables",
+    "Tipos de datos",
+    "Operadores aritméticos",
+    "Uso de print()",
+    "Uso de type()",
+    "f-strings"
+  ],
+  "explanation": {
+    "title": "¿Qué es una variable?",
+    "content": "Una variable permite guardar información para usarla después. En Python no necesitas declarar el tipo de dato antes de usarla. El tipo se asigna automáticamente según el valor que guardes.",
+    "notes": [
+      "Los textos se escriben entre comillas.",
+      "Los números enteros no llevan punto decimal.",
+      "Los números decimales usan punto, no coma.",
+      "Los valores booleanos son True o False.",
+      "La función type() permite revisar el tipo de dato."
+    ]
+  },
+  "example": {
+    "title": "Ejemplo básico",
+    "description": "En este ejemplo se crean variables de distintos tipos y después se muestran en pantalla.",
+    "code": "nombre = 'Ana'\nedad = 25\nprecio = 99.50\nactivo = True\n\nprint(nombre)\nprint(edad)\nprint(precio)\nprint(activo)\n\nprint(type(nombre))\nprint(type(edad))\nprint(type(precio))\nprint(type(activo))",
+    "expectedOutput": "Ana\n25\n99.5\nTrue\n<class 'str'>\n<class 'int'>\n<class 'float'>\n<class 'bool'>"
+  },
+  "practiceExample": {
+    "title": "Ejemplo aplicado",
+    "description": "Este ejemplo calcula el total de una compra usando variables y operadores.",
+    "code": "producto = 'Mouse inalámbrico'\nprecio = 250\ncantidad = 3\n\ntotal = precio * cantidad\n\nprint(f'Producto: {producto}')\nprint(f'Precio: ${precio}')\nprint(f'Cantidad: {cantidad}')\nprint(f'Total a pagar: ${total}')"
+  },
+  "exercises": [
+    {
+      "id": 1,
+      "title": "Datos personales",
+      "difficulty": "Básico",
+      "instruction": "Crea variables para guardar tu nombre, edad y ciudad. Después muestra los valores en pantalla usando print().",
+      "starterCode": "nombre = ''\nedad = 0\nciudad = ''\n\nprint(nombre)\nprint(edad)\nprint(ciudad)",
+      "expectedResult": "El programa debe mostrar el nombre, la edad y la ciudad capturados en variables.",
+      "hint": "Recuerda usar comillas para los textos."
+    },
+    {
+      "id": 2,
+      "title": "Total de compra",
+      "difficulty": "Básico",
+      "instruction": "Crea variables para precio y cantidad. Calcula el total multiplicando precio por cantidad y muestra el resultado.",
+      "starterCode": "precio = 0\ncantidad = 0\n\ntotal = precio * cantidad\n\nprint(total)",
+      "expectedResult": "El programa debe mostrar el total de la compra.",
+      "hint": "El operador de multiplicación en Python es *."
+    },
+    {
+      "id": 3,
+      "title": "Tipos de datos",
+      "difficulty": "Básico",
+      "instruction": "Crea una variable de texto, una de número entero, una de número decimal y una booleana. Usa type() para mostrar el tipo de cada una.",
+      "starterCode": "nombre = 'Luis'\nedad = 30\nprecio = 150.75\nactivo = True\n\nprint(type(nombre))\nprint(type(edad))\nprint(type(precio))\nprint(type(activo))",
+      "expectedResult": "El programa debe mostrar los tipos str, int, float y bool.",
+      "hint": "type() recibe una variable y devuelve su tipo de dato."
+    }
+  ],
+  "solution": {
+    "title": "Soluciones sugeridas",
+    "description": "Estas soluciones son una forma posible de resolver los ejercicios. Puede haber otras respuestas correctas.",
+    "items": [
+      {
+        "exerciseId": 1,
+        "code": "nombre = 'Carlos'\nedad = 22\nciudad = 'Querétaro'\n\nprint(nombre)\nprint(edad)\nprint(ciudad)"
+      },
+      {
+        "exerciseId": 2,
+        "code": "precio = 120\ncantidad = 4\n\ntotal = precio * cantidad\n\nprint(f'Total a pagar: ${total}')"
+      },
+      {
+        "exerciseId": 3,
+        "code": "nombre = 'Luis'\nedad = 30\nprecio = 150.75\nactivo = True\n\nprint(type(nombre))\nprint(type(edad))\nprint(type(precio))\nprint(type(activo))"
+      }
+    ]
+  },
+  "challenge": {
+    "title": "Reto: Ticket de compra",
+    "description": "Crea un pequeño ticket de compra usando variables. Debe incluir producto, precio, cantidad, subtotal, IVA y total.",
+    "requirements": [
+      "Crear una variable para el nombre del producto.",
+      "Crear una variable para el precio.",
+      "Crear una variable para la cantidad.",
+      "Calcular el subtotal.",
+      "Calcular el IVA usando 16%.",
+      "Calcular el total.",
+      "Mostrar el ticket usando print() y f-strings."
+    ],
+    "starterCode": "producto = 'Teclado'\nprecio = 350\ncantidad = 2\n\nsubtotal = precio * cantidad\niva = subtotal * 0.16\ntotal = subtotal + iva\n\nprint('--- TICKET DE COMPRA ---')\nprint(f'Producto: {producto}')\nprint(f'Precio: ${precio}')\nprint(f'Cantidad: {cantidad}')\nprint(f'Subtotal: ${subtotal}')\nprint(f'IVA: ${iva}')\nprint(f'Total: ${total}')"
+  },
+  "checklist": [
+    "Creé variables para guardar información.",
+    "Usé textos, números enteros, decimales y booleanos.",
+    "Realicé operaciones básicas con operadores aritméticos.",
+    "Mostré información usando print().",
+    "Revisé tipos de datos usando type().",
+    "Usé f-strings para mostrar mensajes más claros."
+  ],
+  "summary": [
+    "Una variable guarda un valor para usarlo después.",
+    "Python detecta automáticamente el tipo de dato.",
+    "Los tipos básicos más comunes son str, int, float y bool.",
+    "Los operadores permiten realizar cálculos.",
+    "print() muestra información en pantalla.",
+    "type() permite revisar el tipo de dato de una variable."
+  ],
+  "nextLesson": {
+    "title": "Entrada de datos y conversiones",
+    "slug": "entrada-datos-conversiones"
+  }
+}

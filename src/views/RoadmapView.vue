@@ -1,6 +1,7 @@
 <script setup>
-import modules from '../data/modules.json'
-import lessons from '../data/lessons.json'
+  import modules from '../data/modules.json'
+ import lesson from '../data/lesson.json'
+  const lessons = [lesson]
 </script>
 
 <template>
