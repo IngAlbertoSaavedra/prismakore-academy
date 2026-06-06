@@ -1,10 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import HomeView from '../views/HomeView.vue'
-import RoadmapView from '../views/RoadmapView.vue'
 import LessonView from '../views/LessonView.vue'
-import ProgressView from '../views/ProgressView.vue'
-import ContactView from '../views/ContactView.vue'
+import RoadmapView from '../views/RoadmapView.vue'
 
 const routes = [
   {
@@ -18,24 +16,14 @@ const routes = [
     component: RoadmapView
   },
   {
-    path: '/leccion/:slug',
+    path: '/leccion/variables-tipos-operadores',
     name: 'lesson',
     component: LessonView
-  },
-  {
-    path: '/progreso',
-    name: 'progress',
-    component: ProgressView
-  },
-  {
-    path: '/contacto',
-    name: 'contact',
-    component: ContactView
   }
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes
 })
 

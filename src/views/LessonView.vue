@@ -13,19 +13,10 @@
     </div>
 
     <section class="lesson-hero">
-      <div class="pk-badge">
-        <img
-          src="https://ajsaavedra.com/assets/prisma-logo.png"
-          alt="Logo PrismaKore"
-          class="pk-badge-logo"
-        />
+       <BrandBadge label="Python Aplicado" />
 
-        <span>PrismaKore Academy</span>
-        <span class="pk-badge-muted">• Python Aplicado</span>
-      </div>
-
-      <RouterLink to="/ruta" class="back-link">
-        ← Volver a la ruta de aprendizaje
+      <RouterLink to="/" class="back-link">
+        ← Volver al inicio
       </RouterLink>
 
       <div class="hero-content">
@@ -46,9 +37,13 @@
           </div>
         </div>
 
-        <button class="complete-btn" @click="toggleCompleted">
+        <BaseButton
+          type="button"
+          variant="secondary"
+          @click="toggleCompleted"
+        >
           {{ completed ? 'Marcar como pendiente' : 'Marcar como completada' }}
-        </button>
+        </BaseButton>
       </div>
     </section>
 
@@ -186,6 +181,8 @@
 
 <script setup>
 import { computed, reactive, onMounted, nextTick } from 'vue'
+import BaseButton from '../components/BaseButton.vue'
+import BrandBadge from '../components/BrandBadge.vue'
 import lesson from '../data/lesson.json'
 
 import Prism from 'prismjs'
@@ -290,35 +287,6 @@ import 'prismjs/components/prism-python'
   margin-bottom: 28px;
 }
 
-.pk-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.06);
-  color: #e2e8f0;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.pk-badge-logo {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
-}
-
-.pk-badge-muted {
-  color: #cbd5e1;
-  text-transform: none;
-  letter-spacing: 0;
-  font-weight: 600;
-}
-
 .back-link {
   display: block;
   width: fit-content;
@@ -380,32 +348,6 @@ h1 {
   font-size: 0.92rem;
 }
 
-.complete-btn {
-  min-width: 230px;
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  border-radius: 18px;
-  padding: 15px 22px;
-  background:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.86), rgba(30, 41, 59, 0.72)),
-    linear-gradient(135deg, rgba(56, 189, 248, 0.28), rgba(124, 58, 237, 0.24));
-  color: #e0f2fe;
-  font-weight: 900;
-  font-size: 0.98rem;
-  cursor: pointer;
-  box-shadow:
-    0 0 0 6px rgba(255, 255, 255, 0.04),
-    0 18px 45px rgba(14, 165, 233, 0.14);
-  backdrop-filter: blur(10px);
-}
-
-.complete-btn:hover {
-  border-color: rgba(56, 189, 248, 0.7);
-  color: #ffffff;
-  transform: translateY(-1px);
-  box-shadow:
-    0 0 0 6px rgba(56, 189, 248, 0.08),
-    0 22px 55px rgba(14, 165, 233, 0.2);
-}
 .content-grid {
   display: grid;
   grid-template-columns: minmax(0, 760px) 320px;
@@ -604,11 +546,7 @@ pre[class*="language-"] {
     padding-top: 24px;
   }
 
-  .pk-badge {
-    padding: 9px 13px;
-    font-size: 0.68rem;
-  }
-
+  
   h1 {
     font-size: clamp(2.1rem, 12vw, 3.2rem);
   }
