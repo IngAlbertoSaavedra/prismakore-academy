@@ -1,0 +1,29 @@
+export const courses = {
+  'python-aplicado': {
+    title: 'Python Aplicado',
+    status: 'Activo',
+    badge: 'Ruta activa',
+    description:
+      'Aprende Python resolviendo ejercicios reales de automatización, archivos, datos y reportes.',
+    modules: [
+      'Fundamentos de Python',
+      'Archivos y automatización',
+      'Datos y reportes',
+      'Proyecto final aplicado',
+    ],
+  },
+
+  'excel-profesional': {
+    title: 'Excel Profesional',
+    status: 'Próximamente',
+    badge: 'En preparación',
+    description:
+      'Domina Excel para análisis, reportes, automatización y trabajo administrativo real.',
+    modules: [
+      'Funciones esenciales',
+      'Tablas y limpieza de datos',
+      'Reportes y dashboards',
+      'Automatización con macros',
+    ],
+  },
+}
