@@ -29,7 +29,7 @@
           <div class="hero-actions">
             <RouterLink
               v-if="isPythonCourse"
-              to="/lesson/1"
+              to="/ruta"
               class="primary-btn"
             >
               Entrar al curso
@@ -96,7 +96,7 @@
         <div class="hero-actions hero-actions-center">
           <RouterLink
             v-if="isPythonCourse"
-            to="/lesson/1"
+            to="/ruta"
             class="primary-btn"
           >
             Iniciar ruta
