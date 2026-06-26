@@ -11,14 +11,13 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
-
 import './assets/global.css'
 import './assets/ui.css'
-import './style.css'
+import './assets/pka.css'
 
 const vuetify = createVuetify({
   components,
-  directives
+  directives,
 })
 
 createApp(App)
