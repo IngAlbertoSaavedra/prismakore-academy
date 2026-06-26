@@ -19,7 +19,7 @@
 
           <p class="subtitle">
             Avanza por una ruta práctica desde fundamentos de programación hasta
-            automatización, archivos, datos, reportes y proyecto final.
+            interfaces visuales, bases de datos, reportes, T-SQL y proyecto final.
           </p>
 
           <div class="hero-actions">
@@ -37,10 +37,11 @@
       <section class="section-block">
         <div class="section-title section-title-left">
           <span class="level-badge">Mapa del curso</span>
-          <h2>Contenido por módulos</h2>
+          <h2>Ruta completa de aprendizaje</h2>
+
           <p>
-            Esta vista muestra el avance general de la ruta. Por ahora está habilitada
-            la primera lección y el resto queda marcado como próximo contenido.
+            Avanza paso a paso por fundamentos, archivos, interfaces visuales,
+            bases de datos, reportes y un proyecto final aplicado.
           </p>
         </div>
 
@@ -49,7 +50,7 @@
             v-for="module in modules"
             :key="module.id"
             class="roadmap-module glass-card"
-            :class="{ 'roadmap-module-active': module.available }"
+            :class="{ 'roadmap-module-active': hasAvailableLessons(module) }"
           >
             <div class="module-header">
               <span class="module-number">
@@ -58,9 +59,9 @@
 
               <span
                 class="module-status"
-                :class="{ 'module-status-active': module.available }"
+                :class="{ 'module-status-active': hasAvailableLessons(module) }"
               >
-                {{ module.available ? 'Disponible' : 'Próximamente' }}
+                {{ hasAvailableLessons(module) ? 'Disponible' : 'Próximamente' }}
               </span>
             </div>
 
@@ -71,26 +72,27 @@
             </p>
 
             <div class="lesson-list">
-              <RouterLink
+              <template
                 v-for="lesson in module.lessons"
-                v-if="module.available"
                 :key="lesson.id"
-                :to="lesson.to"
-                class="lesson-item lesson-item-active"
               >
-                <span>{{ String(lesson.id).padStart(2, '0') }}</span>
-                <strong>{{ lesson.title }}</strong>
-              </RouterLink>
+                <RouterLink
+                  v-if="lesson.available"
+                  :to="lesson.to"
+                  class="lesson-item lesson-item-active"
+                >
+                  <span>{{ String(lesson.id).padStart(2, '0') }}</span>
+                  <strong>{{ lesson.title }}</strong>
+                </RouterLink>
 
-              <div
-                v-for="lesson in module.lockedLessons"
-                v-else
-                :key="lesson.id"
-                class="lesson-item lesson-item-locked"
-              >
-                <span>{{ String(lesson.id).padStart(2, '0') }}</span>
-                <strong>{{ lesson.title }}</strong>
-              </div>
+                <div
+                  v-else
+                  class="lesson-item lesson-item-locked"
+                >
+                  <span>{{ String(lesson.id).padStart(2, '0') }}</span>
+                  <strong>{{ lesson.title }}</strong>
+                </div>
+              </template>
             </div>
           </article>
         </div>
@@ -104,7 +106,7 @@
         <p>
           La primera lección introduce variables, tipos de datos y operadores.
           Es el punto de partida antes de avanzar a entrada de datos, condiciones,
-          ciclos y estructuras.
+          ciclos, estructuras, archivos e interfaces.
         </p>
 
         <div class="hero-actions hero-actions-center">
@@ -124,90 +126,13 @@
 <script setup>
 import BrandBadge from '../components/BrandBadge.vue'
 import PkaBackground from '../components/PkaBackground.vue'
+import { pythonRoadmap } from '../data/pythonRoadmap'
 
-const modules = [
-  {
-    id: 1,
-    title: 'Módulo 1: Fundamentos',
-    description:
-      'Conceptos base para comenzar a programar con Python de forma ordenada.',
-    available: true,
-    lessons: [
-      {
-        id: 1,
-        title: 'Variables, tipos y operadores',
-        to: '/lesson/1',
-      },
-    ],
-    lockedLessons: [],
-  },
-  {
-    id: 2,
-    title: 'Módulo 2: Archivos y automatización',
-    description:
-      'Lectura, escritura y organización de archivos para resolver tareas repetitivas.',
-    available: false,
-    lessons: [],
-    lockedLessons: [
-      {
-        id: 8,
-        title: 'Archivos TXT y CSV',
-      },
-      {
-        id: 9,
-        title: 'Automatización de carpetas',
-      },
-      {
-        id: 10,
-        title: 'Limpieza y organización de archivos',
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: 'Módulo 3: Datos y reportes',
-    description:
-      'Procesamiento de información, limpieza de datos y generación de reportes.',
-    available: false,
-    lessons: [],
-    lockedLessons: [
-      {
-        id: 13,
-        title: 'Introducción a pandas',
-      },
-      {
-        id: 14,
-        title: 'Limpieza de datos',
-      },
-      {
-        id: 15,
-        title: 'Filtros y agrupaciones',
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: 'Módulo 4: Proyecto final',
-    description:
-      'Construcción de un entregable aplicado con datos, archivos y automatización.',
-    available: false,
-    lessons: [],
-    lockedLessons: [
-      {
-        id: 18,
-        title: 'Proyecto ventas, clientes o inventario',
-      },
-      {
-        id: 19,
-        title: 'Reporte automático',
-      },
-      {
-        id: 20,
-        title: 'Entregable final',
-      },
-    ],
-  },
-]
+const modules = pythonRoadmap
+
+function hasAvailableLessons(module) {
+  return module.lessons.some((lesson) => lesson.available)
+}
 </script>
 
 <style scoped>
@@ -219,6 +144,11 @@ const modules = [
   max-width: 860px;
 }
 
+.roadmap-hero h1 {
+  font-size: clamp(2.1rem, 3.6vw, 3.15rem);
+  max-width: 720px;
+}
+
 .roadmap-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 1fr));
@@ -228,7 +158,7 @@ const modules = [
 .roadmap-module {
   border-radius: 24px;
   padding: 24px;
-  min-height: 330px;
+  min-height: 360px;
 }
 
 .roadmap-module-active {
@@ -344,13 +274,17 @@ const modules = [
 
 @media (max-width: 620px) {
   .roadmap-module {
-    padding: 20px;
     min-height: auto;
+    padding: 20px;
   }
 
   .module-header {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .lesson-item {
+    grid-template-columns: 30px 1fr;
   }
 }
 </style>
